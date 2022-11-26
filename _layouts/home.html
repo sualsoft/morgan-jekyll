@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-none">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-center"
+      >
+        <a href="/" class="logo d-flex align-items-center">
+          <img src="/assets/img/logo.png" alt="" />
+          <span>FlexStart</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Hero Section ======= -->
+      {% include hero.html %}
+      <!-- End Hero -->
+
+      <!-- ======= Values Section ======= -->
+      {% include values.html %}
+      <!-- End Values Section -->
+
+      <!-- ======= Flight Section ======= -->
+      {% include flight.html %}
+      <!-- End Flight  Section -->
+
+      <!-- ======= Flight Section ======= -->
+      {% include flight-2.html %}
+      <!-- End Flight  Section -->
+
+      <!-- ======= Case Section ======= -->
+      {% include case-study.html %}
+      <!-- End Case  Section -->
+
+      <!-- ======= Case Section ======= -->
+      {% include why-us.html %}
+      <!-- End Case  Section -->
+    </main>
+    <!-- End #main -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- ======= Hero Section ======= -->
+    {% include script.html %}
+    <!-- End Hero -->
+  </body>
+</html>

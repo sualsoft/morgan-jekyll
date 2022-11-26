@@ -1,0 +1,734 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #4154f1;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #717ff5;
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.section-header h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin: 0;
+  color: #4154f1;
+  text-transform: uppercase;
+}
+.section-header p {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 38px;
+  line-height: 42px;
+  font-weight: 700;
+  color: #012970;
+}
+@media (max-width: 768px) {
+  .section-header p {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #012970;
+  min-height: 40px;
+  margin-top: 82px;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 57px;
+  }
+}
+.breadcrumbs h2 {
+  font-size: 28px;
+  font-weight: 500;
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+}
+.breadcrumbs ol a {
+  color: #fff;
+  transition: 0.3s;
+}
+.breadcrumbs ol a:hover {
+  text-decoration: underline;
+}
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #8894f6;
+  content: "/";
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background: #28b6b7;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+.back-to-top i {
+  font-size: 24px;
+  color: #fff;
+  line-height: 0;
+}
+.back-to-top:hover {
+  background: #000;
+  color: #fff;
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+}
+.header.header-scrolled {
+  background: none;
+  padding: 15px 0;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+}
+.header .logo {
+  line-height: 0;
+}
+.header .logo img {
+  max-height: 50px;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/hero-bg.jpg) top no-repeat;
+  background-size: cover;
+}
+
+#hero:before {
+  content: "";
+  background: url(../img/spaceship.png) top no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+#hero .wrapper {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#hero .wrapper .button {
+  margin-left: 155px;
+}
+#hero .wrapper .button a .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  background: url(/assets/img/menu-btn.png) top center;
+  background-size: cover;
+  z-index: 77;
+}
+#hero .wrapper .button a {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+#hero .wrapper .button:first-child {
+  margin-left: 175px;
+}
+#hero .wrapper .button span {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px 45px;
+  color: #28b6b7;
+  border-radius: 50px;
+  border: 2px #28b6b7 solid;
+  margin-left: -35px;
+  z-index: 9;
+  transition: all ease-out 0.3s;
+}
+
+#hero .wrapper .button:hover span {
+  display: block;
+}
+
+#hero .wrapper .button:hover .icon {
+  background: url(/assets/img/menu-btn-on.png) top center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  z-index: 77;
+}
+#hero .wrapper .button .icon img {
+  height: 30px;
+  width: 30px;
+}
+
+#hero .hero .btn-get-started {
+  margin-top: 30px;
+  line-height: 0;
+  padding: 15px 40px;
+  border-radius: 4px;
+  transition: 0.5s;
+  color: #fff;
+  background: #4154f1;
+  box-shadow: 0px 5px 30px rgba(65, 84, 241, 0.4);
+}
+#hero .star-btn {
+  z-index: 1;
+  padding: 15px;
+}
+
+#hero .star-btn .btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+#hero .star-btn a {
+  text-align: center;
+  color: #fff;
+  background-color: #28b6b7;
+}
+#hero .star-btn p {
+  color: #28b6b7;
+  text-align: center;
+}
+#hero .star-btn p span {
+  color: #fff;
+  text-align: center;
+}
+.hero .btn-get-started:hover i {
+  transform: translateX(5px);
+}
+.hero .hero-img {
+  text-align: right;
+}
+@media (min-width: 1024px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 991px) {
+  .hero {
+    height: auto;
+    padding: 120px 0 60px 0;
+  }
+  .hero .hero-img {
+    text-align: center;
+    margin-top: 80px;
+  }
+  .hero .hero-img img {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero h2 {
+    font-size: 24px;
+  }
+  .hero .hero-img img {
+    width: 100%;
+  }
+}
+/*--------------------------------------------------------------
+# starwars text
+--------------------------------------------------------------*/
+.starwars-page {
+  margin: auto;
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  bottom: 0;
+  perspective: 500px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.starwars-intro {
+  top: 0%;
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  font-size: 16px;
+  color: #e8be1e;
+  text-align: justify;
+  transform: rotateX(30deg) scale(2);
+}
+/*--------------------------------------------------------------
+# Index Page
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Values
+--------------------------------------------------------------*/
+.values header .liner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.values header .liner i {
+  color: #28b6b7;
+  font-size: 22px;
+}
+.values header .liner .line {
+  content: "";
+  background-color: #28b6b7;
+  width: 100px;
+  height: 2px;
+  border-radius: 40px;
+}
+
+.values header p {
+  font-size: 54px;
+  font-weight: 700;
+  color: #28b6b7;
+}
+.values .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+.values .box img {
+  padding: 50px 80px;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+.values .box h3 {
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.values .box p {
+  color: #000;
+}
+
+.values .box a {
+  background-color: #fff;
+  border-radius: 100px;
+  padding: 10px 14px;
+  color: #28b6b7;
+  border: 1px solid #28b6b7;
+}
+.values .box:hover {
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+.values .box:hover img {
+  transform: scale(1);
+}
+
+/*--------------------------------------------------------------
+# Flight
+--------------------------------------------------------------*/
+.flight {
+  width: 100%;
+  background: url(../img/fl-bg.jpg) top no-repeat;
+  background-size: cover;
+  background-color: #000;
+}
+
+.flight header .liner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.flight header .liner i {
+  color: #28b6b7;
+  font-size: 22px;
+}
+.flight header .liner .line {
+  content: "";
+  background-color: #28b6b7;
+  width: 100px;
+  height: 2px;
+  border-radius: 40px;
+}
+
+.flight header p {
+  font-size: 54px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.flight .flight-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flight .flight-box img {
+  width: 150px;
+  height: auto;
+  transition: all 0.3s ease-out;
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+}
+
+.flight .flight-box .img-2 {
+  display: none;
+}
+
+.flight .flight-box:hover .img-2 {
+  display: block;
+}
+.flight .flight-box:hover .img-1 {
+  display: none;
+}
+
+.flight .flight-box a {
+  padding: 5px 15px;
+  margin-top: 8px;
+  color: #28b6b7;
+  border: 1px solid #28b6b7;
+  border-radius: 50px;
+  transition: all 0.3s ease-out;
+}
+
+.flight .flight-box a:hover {
+  padding: 5px 15px;
+  background-color: #fff;
+  margin-top: 8px;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 50px;
+}
+/*--------------------------------------------------------------
+# Flight -2
+--------------------------------------------------------------*/
+.flight-2 {
+  width: 100%;
+}
+
+.flight-2 header .liner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.flight-2 header .liner i {
+  color: #28b6b7;
+  font-size: 22px;
+}
+.flight-2 header .liner .line {
+  content: "";
+  background-color: #28b6b7;
+  width: 100px;
+  height: 2px;
+  border-radius: 40px;
+}
+
+.flight-2 header p {
+  font-size: 54px;
+  font-weight: 700;
+  color: #28b6b7;
+}
+
+.flight-2 .flight-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flight-2 .flight-box img {
+  width: 150px;
+  height: auto;
+  transition: all 0.3s ease-out;
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+}
+
+.flight-2 .flight-box .img-2 {
+  display: none;
+}
+
+.flight-2 .flight-box:hover .img-2 {
+  display: block;
+}
+.flight-2 .flight-box:hover .img-1 {
+  display: none;
+}
+
+.flight-2 .flight-box a {
+  padding: 5px 15px;
+  margin-top: 8px;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 50px;
+  transition: all 0.3s ease-out;
+}
+
+.flight-2 .flight-box a:hover {
+  padding: 5px 15px;
+  background-color: #28b6b7;
+  margin-top: 8px;
+  color: #fff;
+  border: 1px solid #28b6b7;
+  border-radius: 50px;
+}
+
+/*--------------------------------------------------------------
+# case-study
+--------------------------------------------------------------*/
+.case {
+  width: 100%;
+  background: url(../img/fl-bg.jpg) top no-repeat;
+  background-size: cover;
+  background-color: #000;
+}
+
+.case header .liner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.case header .liner i {
+  color: #28b6b7;
+  font-size: 22px;
+}
+.case header .liner .line {
+  content: "";
+  background-color: #28b6b7;
+  width: 100px;
+  height: 2px;
+  border-radius: 40px;
+}
+
+.case header h2 {
+  font-size: 54px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.case header p {
+  color: #fff;
+}
+
+.case header a {
+  color: #fff;
+  border: 1px #fff solid;
+  border-radius: 50px;
+  padding: 5px 10px;
+  transition: all ease-out 0.3s;
+}
+
+.case header a:hover {
+  color: #fff;
+  border: 1px #28b6b7 solid;
+  background-color: #28b6b7;
+}
+
+.case .card {
+  background-color: transparent;
+  border: none;
+}
+
+.case .card .content {
+  text-align: center;
+  width: 100%;
+  height: 200px;
+}
+
+.case .card .content .text {
+  width: 100%;
+  position: absolute;
+  top: 320px;
+}
+
+.case .card .content .text a {
+  font-size: 26px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.case .card .content .text p {
+  color: #fff;
+}
+.case .card .content .text a:hover {
+  color: #28b6b7;
+}
+/*--------------------------------------------------------------
+# Why us
+--------------------------------------------------------------*/
+
+.why-us header .liner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.why-us header .liner i {
+  color: #28b6b7;
+  font-size: 22px;
+}
+.why-us header .liner .line {
+  content: "";
+  background-color: #28b6b7;
+  width: 100px;
+  height: 2px;
+  border-radius: 40px;
+}
+
+.why-us header h2 {
+  font-size: 54px;
+  font-weight: 700;
+  color: #28b6b7;
+}
+
+.why-us header p {
+  color: #000;
+}
+
+.why-us .card {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.why-us .card .demo-bg {
+  min-height: 250px;
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  transition: all ease-out 0.3s;
+}
+
+.why-us .card a {
+  position: relative;
+}
+.why-us .card a {
+  opacity: 1;
+}
+.why-us .card a h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #28b6b7;
+  opacity: 1 !important;
+  transition: all ease-out 0.3s;
+}
+
+.why-us .card a p {
+  color: #000;
+  opacity: 1 !important;
+  transition: all ease-out 0.3s;
+}
+
+.why-us .card:hover .demo-bg {
+  opacity: 1;
+}
+
+.why-us .card:hover p,
+.why-us .card:hover h3 {
+  color: #fff;
+}
+/*--------------------------------------------------------------
+# F.A.Q
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
